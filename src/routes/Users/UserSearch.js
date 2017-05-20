@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { routerRedux } from 'dva/router';
 import { connect } from 'dva';
-import { Form, Input, Button} from 'antd';
+import { Form, Input, Button } from 'antd';
 import Userform from '../../components/Common/Userform';
 
 function UserSearch(props) {
@@ -16,7 +16,7 @@ function UserSearch(props) {
   };
   return (
     <div>
-      <Userform {...userSearchProps}/>
+      <Userform {...userSearchProps} />
     </div>
   );
 }

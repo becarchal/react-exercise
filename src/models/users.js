@@ -16,24 +16,24 @@ export default {
   },
 
   effects: {
-    *query({ payload }, { call, put }) {  // eslint-disable-line
-      const username = payload;
-      const [userInfoPromise,orgsPromise] = yield call(usersService.getUserProfile, username);
-      yield put({ type: 'queryprofilesuccess', payload: {userInfoPromise}});
+    *query(action, { call, put }) {  // eslint-disable-line
+      const username = action.username;
+      const [userInfoPromise, orgsPromise] = yield call(usersService.getUserProfile, username);
+      yield put({ type: 'queryprofilesuccess', userInfoPromise, orgsPromise });
     },
-    *queryrepos({ payload }, { call, put }) {  // eslint-disable-line
-      const username = payload;
+    *queryrepos(action, { call, put }) {  // eslint-disable-line
+      const username = action.username;
       const data = yield call(usersService.getUserRepos, username);
-      yield put({ type: 'queryreposuccess', payload: {data}});
+      yield put({ type: 'queryreposuccess', data });
     },
   },
 
   reducers: {
-    queryprofilesuccess(state, {payload: {userInfoPromise: datalist, orgsPromise: orgs}}) {
-      return { ...state, datalist, orgs};
+    queryprofilesuccess(state, { userInfoPromise, orgsPromise }) {
+      return { ...state, datalist: userInfoPromise, orgs: orgsPromise };
     },
-    queryreposuccess(state,  {payload: {data: repos}}) {
-      return { ...state, repos };
+    queryreposuccess(state, { data }) {
+      return { ...state, repos: data };
     },
   },
 

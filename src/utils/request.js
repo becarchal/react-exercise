@@ -33,7 +33,7 @@ export default function request(url, options) {
     .then(parseJSON)
     .then(data => { 
       console.log('request suceeded with JSON response');
-      return {data}; 
+      return data; 
     })
     .catch(err => { 
       console.log('request failed', err);
