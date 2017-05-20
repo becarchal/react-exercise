@@ -1,0 +1,19 @@
+.normal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 1% 5% 0 5%;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+}
+
+/*.header {
+	background-color: #BBB7B7!important;
+}*/
+.main {
+  padding: 0 8px;
+  flex: 1 0 auto;
+}

@@ -1,0 +1,21 @@
+
+.normal {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.search {
+  flex: 1;
+}
+
+.create {
+}
+
+.antFormItem {
+	width: 500px!important;
+}
+
+.inputstyle {
+	padding-left: 20px;
+	width: 320px!important;
+}
