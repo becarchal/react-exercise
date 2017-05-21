@@ -31,13 +31,13 @@ export default function request(url, options) {
   return fetch(url, options)
     .then(checkStatus)
     .then(parseJSON)
-    .then(data => { 
-      console.log('request suceeded with JSON response');
-      return data; 
+    .then((data) => {
+      console.log('request suceeded with JSON response', data);
+      return data;
     })
-    .catch(err => { 
+    .catch((err) => {
       console.log('request failed', err);
-      return {err}; 
+      return err;
     });
 //   const response = await fetch(url, options);
 //   checkStatus(response);
