@@ -16,9 +16,21 @@ export function getUserProfile(username) {
 }
 
 export function getUserRepos(username) {
+  // "proxy": {
+  //   "/api": {
+  //     "target": "http://jsonplaceholder.typicode.com",
+  //     "changeOrigin": true,
+  //     "pathRewrite": { "^/api" : "" }
+  //   }
+  // },对应的roadhog设置
+  // return request(`/api/users/${username}`, {
+  //   method: 'get',
+  //   mode: 'cors',
+  // });
   const url = `api/users/${username}/repos?per_page=250&client_id=8a9bbf3c53006781069d&client_secret=6febf2880914f1e4fe825813215d32f435050fab`;
   return request(url, {
     method: 'get',
+    mode: 'no-cors',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
     },
