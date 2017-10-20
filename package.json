@@ -1,4 +1,6 @@
 {
+  "name": "becar-react-demo"
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "set port=8888 && roadhog server",
